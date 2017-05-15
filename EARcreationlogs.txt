@@ -1,0 +1,54 @@
+[INFO] Scanning for projects...
+[WARNING] 
+[WARNING] Some problems were encountered while building the effective model for com.unico.jms:UnicEntry:pom:0.0.1-SNAPSHOT
+[WARNING] 'dependencies.dependency.(groupId:artifactId:type:classifier)' must be unique: org.springframework.boot:spring-boot-starter-security:jar -> duplicate declaration of version (?) @ line 52, column 15
+[WARNING] 
+[WARNING] It is highly recommended to fix these problems because they threaten the stability of your build.
+[WARNING] 
+[WARNING] For this reason, future Maven versions might no longer support building such malformed projects.
+[WARNING] 
+[INFO] ------------------------------------------------------------------------
+[INFO] Reactor Build Order:
+[INFO] 
+[INFO] UnicoRest
+[INFO] UnicoSOAP
+[INFO] UnicEntry
+[INFO]                                                                         
+[INFO] ------------------------------------------------------------------------
+[INFO] Building UnicoRest 0.0.1-SNAPSHOT
+[INFO] ------------------------------------------------------------------------
+[INFO] 
+[INFO] --- maven-ear-plugin:2.10.1:ear (default-cli) @ UnicoRest ---
+[INFO] Could not find manifest file: E:\spring_boot\Spring_WS1\UnicoRest\target\UnicoRest-0.0.1-SNAPSHOT\META-INF\MANIFEST.MF - Generating one
+[INFO] Building jar: E:\spring_boot\Spring_WS1\UnicoRest\target\UnicoRest-0.0.1-SNAPSHOT.ear
+[INFO]                                                                         
+[INFO] ------------------------------------------------------------------------
+[INFO] Building UnicoSOAP 0.0.1-SNAPSHOT
+[INFO] ------------------------------------------------------------------------
+[INFO] 
+[INFO] --- maven-ear-plugin:2.10.1:ear (default-cli) @ UnicoSOAP ---
+[INFO] Could not find manifest file: E:\spring_boot\Spring_WS1\UnicoSOAP\target\UnicoSOAP-0.0.1-SNAPSHOT\META-INF\MANIFEST.MF - Generating one
+[INFO] Building jar: E:\spring_boot\Spring_WS1\UnicoSOAP\target\UnicoSOAP-0.0.1-SNAPSHOT.ear
+[INFO]                                                                         
+[INFO] ------------------------------------------------------------------------
+[INFO] Building UnicEntry 0.0.1-SNAPSHOT
+[INFO] ------------------------------------------------------------------------
+[INFO] 
+[INFO] --- maven-ear-plugin:2.9.1:ear (default-cli) @ UnicEntry ---
+[INFO] Copying artifact [war:com.unico.assignment:UnicoRest:0.0.1-SNAPSHOT] to [UnicoRest.war]
+[INFO] Copy ear sources to E:\spring_boot\Spring_WS1\UnicEntry\target\UnicoEntry
+[INFO] Could not find manifest file: E:\spring_boot\Spring_WS1\UnicEntry\target\UnicoEntry\META-INF\MANIFEST.MF - Generating one
+[INFO] Building jar: E:\spring_boot\Spring_WS1\UnicEntry\target\UnicoEntry.ear
+[INFO] ------------------------------------------------------------------------
+[INFO] Reactor Summary:
+[INFO] 
+[INFO] UnicoRest .......................................... SUCCESS [  4.244 s]
+[INFO] UnicoSOAP .......................................... SUCCESS [  1.254 s]
+[INFO] UnicEntry .......................................... SUCCESS [  9.200 s]
+[INFO] ------------------------------------------------------------------------
+[INFO] BUILD SUCCESS
+[INFO] ------------------------------------------------------------------------
+[INFO] Total time: 16.438 s
+[INFO] Finished at: 2017-05-15T21:17:36+10:00
+[INFO] Final Memory: 31M/350M
+[INFO] ------------------------------------------------------------------------

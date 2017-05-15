@@ -1,0 +1,106 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+  <modelVersion>4.0.0</modelVersion>
+  <groupId>com.unico.jms</groupId>
+  <artifactId>UnicEntry</artifactId>
+  <version>0.0.1-SNAPSHOT</version>
+  <name>UnicEntry</name>
+  <packaging>pom</packaging>
+  
+  
+  <modules>
+
+  <module>../UnicoRest</module>
+    <module>../UnicoSOAP</module>
+    
+  
+    
+  </modules>
+  
+   <parent>
+		<groupId>org.springframework.boot</groupId>
+		<artifactId>spring-boot-starter-parent</artifactId>
+		<version>1.5.2.RELEASE</version>
+	<relativePath/>  <!--	lookup parent from repository -->
+	</parent>
+  <properties>
+		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+		<project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
+		<java.version>1.8</java.version>
+	</properties>
+	
+	<dependencies>
+
+        <dependency> 
+		<groupId>org.springframework.boot</groupId> 
+		<artifactId>spring-boot-starter-security</artifactId> 
+		</dependency>
+		
+		 <dependency> 
+		<groupId>com.unico.assignment</groupId> 
+		<artifactId>UnicoRest</artifactId> 
+		<version>0.0.1-SNAPSHOT</version>
+		<type>war</type>
+		</dependency>
+		
+		<dependency> 
+		<groupId>com.unico.assign</groupId> 
+		<artifactId>UnicoSOAP</artifactId> 
+		<version>0.0.1-SNAPSHOT</version>
+		<type>war</type>
+		</dependency>
+
+		<dependency>
+			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-starter-security</artifactId>
+		</dependency>
+		
+	</dependencies>
+	
+	<build>
+        <plugins>
+            <plugin>
+                <groupId>org.springframework.boot</groupId>
+                <artifactId>spring-boot-maven-plugin</artifactId>
+            </plugin>
+          <!--   <plugin>
+                    <groupId>org.apache.maven.plugins</groupId>
+                    <artifactId>maven-archetype-plugin</artifactId>
+                    <version>2.2</version>
+                </plugin> -->
+        <plugin>
+            <groupId>org.apache.maven.plugins</groupId>
+            <artifactId>maven-ear-plugin</artifactId>
+            <version>2.9.1</version>
+            <configuration>
+<generateApplicationXml>false</generateApplicationXml>
+            <applicationName>UnicoEntry</applicationName>
+            <earSourceDirectory>${basedir}/src/main/resources</earSourceDirectory>
+            <resourcesDir>target/classes</resourcesDir>
+            <defaultLibBundleDir>lib</defaultLibBundleDir>
+                     <modules>
+                    <webModule>
+                        <groupId>com.unico.assignment</groupId>
+                        <artifactId>UnicoRest</artifactId>
+                        <bundleFileName>UnicoRest.war</bundleFileName>
+                        <contextRoot>/UnicoRest</contextRoot>
+                    </webModule>
+                    <webModule>
+                        <groupId>com.unico.assign</groupId>
+                        <artifactId>UnicoSOAP</artifactId>
+                        <bundleFileName>UnicoSOAP.war</bundleFileName>
+                        <contextRoot>/UnicoSOAP</contextRoot>
+                    </webModule>
+                    
+                </modules>
+                
+            </configuration>
+        </plugin>
+    </plugins>
+       <finalName>UnicoEntry</finalName>
+       <outputDirectory>${project.build.directory}</outputDirectory>
+       
+    </build>
+	
+	
+	
+</project>
